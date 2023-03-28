@@ -1,13 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        creatFile();
-        getFileInfo();
+        //creatFile();
+        //getFileInfo();
+        readFile();
+        writeFile();
         readFile();
     }
 
@@ -53,4 +53,21 @@ public class Main {
 
 
     }
+
+    public static void writeFile(){
+        try {
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("/Users/nevzat/Documents/newFile/students.txt", true));
+            writer.newLine();
+            writer.write("Haydi Çiftetelliye.");
+            System.out.println("Dosyaya yazıldı.");
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 }
+
+
